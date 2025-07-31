@@ -62,34 +62,30 @@ export const TestimonialsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card 
+            <div 
               key={index} 
-              className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md"
+              className="tinder-card group p-8"
             >
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <Avatar className="mr-3">
-                    <AvatarFallback className="bg-primary text-primary-foreground">
-                      {testimonial.avatar}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h4 className="font-semibold">{testimonial.name}</h4>
-                    <p className="text-sm text-muted-foreground">{testimonial.location}</p>
-                  </div>
+              <div className="flex items-center mb-6">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-orange-400 to-pink-400 flex items-center justify-center text-white font-bold text-lg mr-4">
+                  {testimonial.avatar}
                 </div>
-                
-                <div className="flex mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <i key={i} className="fas fa-star text-yellow-500 text-sm"></i>
-                  ))}
+                <div>
+                  <h4 className="font-bold text-lg">{testimonial.name}</h4>
+                  <p className="text-muted-foreground">{testimonial.location}</p>
                 </div>
-                
-                <p className="text-muted-foreground leading-relaxed italic">
-                  "{testimonial.text}"
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+              
+              <div className="flex mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <i key={i} className="fas fa-heart text-orange-400 text-lg mr-1"></i>
+                ))}
+              </div>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg italic">
+                "{testimonial.text}"
+              </p>
+            </div>
           ))}
         </div>
       </div>

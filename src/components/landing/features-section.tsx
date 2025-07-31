@@ -57,26 +57,22 @@ export const FeaturesSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card 
+            <div 
               key={index} 
-              className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-0 shadow-md"
+              className="tinder-card group text-center p-8"
             >
-              <CardHeader className="text-center">
-                <div className="mb-4 flex justify-center">
-                  <ChatBubble className="w-16 h-16 flex items-center justify-center">
-                    <i className={`${feature.icon} text-2xl text-white`}></i>
-                  </ChatBubble>
+              <div className="mb-6 flex justify-center">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-r from-orange-400 to-pink-400 flex items-center justify-center shadow-xl">
+                  <i className={`${feature.icon} text-3xl text-white`}></i>
                 </div>
-                <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">
-                  {feature.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center leading-relaxed">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
+                {feature.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                {feature.description}
+              </p>
+            </div>
           ))}
         </div>
       </div>

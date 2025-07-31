@@ -30,13 +30,13 @@ export const CTASection = () => {
             Your next great connection is just one click away.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button 
               size="lg" 
-              className="text-xl px-12 py-8 hero-glow hover:scale-105 transition-transform"
+              className="tinder-button text-white border-0 text-2xl px-16 py-8"
               onClick={() => setIsRegistrationOpen(true)}
             >
-              <i className="fas fa-rocket mr-3"></i>
+              <i className="fas fa-heart mr-4"></i>
               Join TingleTalk Now
             </Button>
           </div>

@@ -42,44 +42,45 @@ export const HeroSection = () => {
           </ChatBubble>
         </div>
 
-        <div className="text-center max-w-4xl mx-auto z-10">
-          <div className="mb-8 flex justify-center">
-            <img 
-              src={chatLogo} 
-              alt="TingleTalk Logo" 
-              className="w-24 h-24 animate-float hero-glow rounded-2xl"
-            />
+        <div className="text-center max-w-5xl mx-auto z-10">
+          <div className="mb-12 flex justify-center">
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 to-pink-400 blur-2xl opacity-40 animate-pulse"></div>
+              <img 
+                src={chatLogo} 
+                alt="TingleTalk Logo" 
+                className="w-32 h-32 animate-float hero-glow rounded-3xl relative z-10"
+              />
+            </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Connect with 
-            <span className="gradient-text"> Strangers</span>
+          <h1 className="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tight">
+            Meet Someone
             <br />
-            <span className="gradient-text">Anonymously</span>
+            <span className="gradient-text">New Today</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Experience genuine conversations without the pressure. 
-            TingleTalk offers safe, anonymous chatting in disposable rooms.
+          <p className="text-2xl md:text-3xl text-muted-foreground mb-16 max-w-3xl mx-auto leading-relaxed font-medium">
+            Swipe. Chat. Connect. Anonymous conversations with people worldwide.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 hero-glow hover:scale-105 transition-transform"
+              className="tinder-button text-white border-0 text-xl px-12 py-6"
               onClick={() => setIsRegistrationOpen(true)}
             >
-              <i className="fas fa-comments mr-2"></i>
-              Start Chatting
+              <i className="fas fa-heart mr-3"></i>
+              Start Matching
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
-              className="text-lg px-8 py-6 hover:scale-105 transition-transform"
+              className="px-12 py-6 text-xl font-bold border-4 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 rounded-full"
               onClick={() => scrollToSection("how-it-works")}
             >
-              <i className="fas fa-question-circle mr-2"></i>
-              How It Works
+              <i className="fas fa-play mr-3"></i>
+              See How It Works
             </Button>
           </div>
           

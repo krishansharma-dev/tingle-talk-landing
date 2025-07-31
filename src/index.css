@@ -17,16 +17,16 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 259 94% 51%;
+    --primary: 14 100% 57%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 5% 96%;
+    --secondary: 340 100% 95%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 240 5% 96%;
+    --muted: 340 100% 97%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 259 94% 51%;
+    --accent: 330 81% 60%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,14 +34,16 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 259 94% 51%;
+    --ring: 14 100% 57%;
 
-    --chat-primary: 259 94% 51%;
-    --chat-secondary: 280 100% 70%;
+    --chat-primary: 14 100% 57%;
+    --chat-secondary: 330 81% 60%;
     --gradient-chat: linear-gradient(135deg, hsl(var(--chat-primary)), hsl(var(--chat-secondary)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--chat-primary) / 0.1), hsl(var(--chat-secondary) / 0.1));
+    --gradient-tinder: linear-gradient(45deg, hsl(14 100% 57%), hsl(330 81% 60%));
     --shadow-chat: 0 10px 40px hsl(var(--chat-primary) / 0.3);
     --shadow-glow: 0 0 30px hsl(var(--chat-primary) / 0.2);
+    --shadow-tinder: 0 20px 60px -10px hsl(14 100% 57% / 0.4);
 
     --radius: 1rem;
 
@@ -114,9 +116,9 @@ All colors MUST be HSL.
 
 @layer components {
   .chat-bubble {
-    @apply rounded-2xl p-4 shadow-lg;
-    background: var(--gradient-chat);
-    box-shadow: var(--shadow-chat);
+    @apply rounded-3xl p-6 shadow-lg;
+    background: var(--gradient-tinder);
+    box-shadow: var(--shadow-tinder);
     animation: float 3s ease-in-out infinite;
   }
   
@@ -125,14 +127,36 @@ All colors MUST be HSL.
   }
   
   .gradient-text {
-    background: var(--gradient-chat);
+    background: var(--gradient-tinder);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .hero-glow {
-    box-shadow: var(--shadow-glow);
+    box-shadow: var(--shadow-tinder);
+  }
+  
+  .tinder-card {
+    @apply rounded-3xl bg-white shadow-xl border-0 overflow-hidden;
+    box-shadow: var(--shadow-tinder);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .tinder-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 80px -15px hsl(14 100% 57% / 0.5);
+  }
+  
+  .tinder-button {
+    @apply rounded-full px-8 py-4 font-bold text-lg shadow-lg;
+    background: var(--gradient-tinder);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .tinder-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-tinder);
   }
 }
 
