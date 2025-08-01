@@ -1,3 +1,4 @@
+tingle-talk-landing.lovable.app
 # Welcome to your Lovable project
 
 ## Project info
